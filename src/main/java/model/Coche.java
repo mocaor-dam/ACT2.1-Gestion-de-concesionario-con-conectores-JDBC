@@ -1,22 +1,31 @@
 package model;
 
-import java.util.List;
-
 public class Coche {
     private String matricula;
     private String marca;
     private String modelo;
-
-    private List<Equipamiento> equipamientos;
-
+    private String extras;
     private double precio;
+    //Uso Integer en lugar de int ya que la base de datos no admite que un int primitivo sea null
+    private Integer idPropietario;
 
-    public Coche() {
+    public Coche(String matricula, String marca, String modelo, String extras, double precio) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.extras = extras;
+        this.precio = precio;
     }
 
+    public Coche(String matricula, String marca, String modelo, String extras, double precio, Integer idPropiertario) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.extras = extras;
+        this.precio = precio;
+        this.idPropietario = idPropiertario;
+    }
 
-
-    //Getter y Setters
     public String getMatricula() {
         return matricula;
     }
@@ -41,12 +50,12 @@ public class Coche {
         this.modelo = modelo;
     }
 
-    public List<Equipamiento> getEquipamientos() {
-        return equipamientos;
+    public String getExtras() {
+        return extras;
     }
 
-    public void setEquipamientos(List<Equipamiento> equipamientos) {
-        this.equipamientos = equipamientos;
+    public void setExtras(String extras) {
+        this.extras = extras;
     }
 
     public double getPrecio() {
@@ -57,14 +66,23 @@ public class Coche {
         this.precio = precio;
     }
 
+    public Integer getIdPropietario() {
+        return idPropietario;
+    }
+
+    public void setIdPropietario(Integer idPropietario) {
+        this.idPropietario = idPropietario;
+    }
+
     @Override
     public String toString() {
         return "Coche{" +
                 "matricula='" + matricula + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
-                ", equipamientos=" + equipamientos +
+                ", extras='" + extras + '\'' +
                 ", precio=" + precio +
+                ", idPropiertario=" + idPropietario +
                 '}';
     }
 }
