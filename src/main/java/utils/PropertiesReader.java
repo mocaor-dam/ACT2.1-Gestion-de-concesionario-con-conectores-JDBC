@@ -8,10 +8,11 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class PropertiesReader {
-    private final static Path file = Path.of("src/config.properties");
+    private final static Path file = Paths.get("src/config.properties");
     private Properties p;
     private static PropertiesReader instance = null;
 

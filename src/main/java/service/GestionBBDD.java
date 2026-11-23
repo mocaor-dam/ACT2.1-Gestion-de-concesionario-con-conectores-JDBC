@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -198,7 +199,7 @@ public class GestionBBDD {
 
         String contenidoCSV = "INSERT INTO coches (matricula, marca, modelo, extras, precio, id_propietario) VALUES (?, ?, ?, ?, ?, NULL)";
 
-        try (BufferedReader br = Files.newBufferedReader(Path.of(rutaCsv), StandardCharsets.UTF_8);
+        try (BufferedReader br = Files.newBufferedReader(Paths.get(rutaCsv), StandardCharsets.UTF_8);
              PreparedStatement ps = conn.prepareStatement(contenidoCSV)) {
 
             String cabecera = br.readLine();
@@ -340,7 +341,7 @@ public class GestionBBDD {
         int total = 0;
 
 
-        try (BufferedWriter bw = Files.newBufferedWriter(Path.of(rutaInforme), StandardCharsets.UTF_8)) {
+        try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(rutaInforme), StandardCharsets.UTF_8)) {
             try (PreparedStatement ps = conn.prepareStatement(numCoches)) {
                 try (ResultSet rs = ps.executeQuery()) {
                     if (!rs.next()) {
