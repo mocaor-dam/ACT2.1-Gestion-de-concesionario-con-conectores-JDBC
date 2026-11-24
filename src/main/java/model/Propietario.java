@@ -7,6 +7,7 @@ public class Propietario {
     private String apellidos;
     private String  telefono;
 
+    //Constructor para altas nuevas antes de que la BBDD genere el ID autoincremental
     public Propietario(String dni, String nombre, String apellidos, String telefono) {
         this.dni = dni;
         this.nombre = nombre;
@@ -14,6 +15,7 @@ public class Propietario {
         this.telefono = telefono;
     }
 
+    //Constructor completo para reconstruir objetos leidos desde un ResultSet
     public Propietario(int id_propietario, String dni, String nombre, String apellidos, String telefono) {
         this.id_propietario = id_propietario;
         this.dni = dni;

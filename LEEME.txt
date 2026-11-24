@@ -1,0 +1,25 @@
+Ventajas e Inconvenientes de JDBC:
+
+Ventajas:
+- Permite cambiar de motor de base de datos(MySql a MySQLite) manteniendo practicamente el mismo código Java y cambiando solo el driver y la cadena de conexión.
+- Permite escribir consultas SQL exactas y gestionar manualmente el ciclo de las transacciones
+
+
+
+Inconvenientes:
+- Requiere abrir manualmente muchos recursos como Statement, PreparedStatement, ResultSet
+- Es necesario extraer columna a columna desde el ResultSet para construir las instancias de las clases modelo
+
+--------------------------------------------------------------------
+                Comparativa SQLITE VS MySql
+--------------------------------------------------------------------
+
+SQLite:
+- No requiere servidor ni procesos en segundo plano, toda la base de datos se almacena en un único fichero local (concesionario.db)
+- No soporta procedimientos almacenados
+- Fácil de configurar
+
+MySql:
+- Funciona como un servicio independiente al que los clientes se conectan mediante red con un USUARIO y CONTRASEÑA
+- Soporta procedimientos almacenados
+- Requiere instalar, configurar y mantener activo el servidor de base de datos

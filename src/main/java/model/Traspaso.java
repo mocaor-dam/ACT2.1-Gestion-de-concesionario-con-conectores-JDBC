@@ -8,7 +8,7 @@ public class Traspaso {
     private int idComprador;
     private double montoEconomico;
 
-
+    //Constructor para altas nuevas antes de que la BBDD genere el ID autoincremental
     public Traspaso(String matriculaCoche, Integer idVendedor, int idComprador, double montoEconomico) {
         this.matriculaCoche = matriculaCoche;
         this.idVendedor = idVendedor;
@@ -16,6 +16,7 @@ public class Traspaso {
         this.montoEconomico = montoEconomico;
     }
 
+    //Constructor completo para reconstruir objetos leidos desde un ResultSet
     public Traspaso(int idTraspaso, String matriculaCoche, Integer idVendedor, int idComprador, double montoEconomico) {
         this.idTraspaso = idTraspaso;
         this.matriculaCoche = matriculaCoche;

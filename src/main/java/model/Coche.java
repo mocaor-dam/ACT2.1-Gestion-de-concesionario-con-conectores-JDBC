@@ -9,6 +9,7 @@ public class Coche {
     //Uso Integer en lugar de int ya que la base de datos no admite que un int primitivo sea null
     private Integer idPropietario;
 
+    //Constructor para altas nuevas antes de que la BBDD genere el ID autoincremental
     public Coche(String matricula, String marca, String modelo, String extras, double precio) {
         this.matricula = matricula;
         this.marca = marca;
@@ -17,6 +18,7 @@ public class Coche {
         this.precio = precio;
     }
 
+    //Constructor completo para reconstruir objetos leidos desde un ResultSet
     public Coche(String matricula, String marca, String modelo, String extras, double precio, Integer idPropiertario) {
         this.matricula = matricula;
         this.marca = marca;
